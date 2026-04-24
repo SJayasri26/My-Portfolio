@@ -74,7 +74,7 @@ const Hero = () => {
           className="flex flex-wrap gap-4"
         >
           <a
-            href="/Jayasri_S Resume.pdf"
+            href="/Jayasri_Seenu_Resume.pdf"
             download
             className="btn-gradient inline-flex items-center gap-2 px-6 py-3 text-base"
           >
