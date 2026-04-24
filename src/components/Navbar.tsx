@@ -111,7 +111,7 @@ const Navbar = () => {
           </button>
 
           <a
-            href="/Jayasri_S Resume.pdf"
+            href="/Jayasri_Seenu_Resume.pdf"
             download
             className="btn-gradient text-sm flex items-center gap-2"
           >
