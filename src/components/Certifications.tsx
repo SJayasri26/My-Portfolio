@@ -1,95 +1,119 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { HiCloud } from "react-icons/hi";
-import { SiPython, SiDatabricks } from "react-icons/si";
-import { FaChartBar } from "react-icons/fa";
+import { HiAcademicCap, HiBadgeCheck, HiPresentationChartBar } from "react-icons/hi";
+import { SiPython } from "react-icons/si";
+import { FaDatabase, FaCloud } from "react-icons/fa";
 
-const certs = [
+interface Certification {
+  title: string;
+  issuer: string;
+  description: string;
+  icon: React.ElementType;
+  color: string;
+  bgColor: string;
+}
+
+const certifications: Certification[] = [
   {
     title: "Data Analytics using Power BI",
     issuer: "Professional Training",
-    desc: "Built dashboards, data models, and business insights using Power BI.",
-    icon: <FaChartBar />,
+    description: "Built dashboards, data models, and business insights using Power BI.",
+    icon: HiPresentationChartBar,
+    color: "text-yellow-400",
+    bgColor: "bg-yellow-500/10",
   },
   {
     title: "Python Full Stack Course",
     issuer: "Udemy",
-    desc: "Covered Python, backend logic, and web development fundamentals.",
-    icon: <SiPython />,
+    description: "Covered Python, backend logic, and web development fundamentals.",
+    icon: SiPython,
+    color: "text-green-400",
+    bgColor: "bg-green-500/10",
   },
   {
     title: "Associate Data Analyst",
     issuer: "DataCamp",
-    desc: "Focused on data cleaning, analysis, and visualization techniques.",
-    icon: <SiDatabricks />,
+    description: "Focused on data cleaning, analysis, and visualization techniques.",
+    icon: FaDatabase,
+    color: "text-blue-400",
+    bgColor: "bg-blue-500/10",
   },
   {
     title: "Cloud Computing Certification",
     issuer: "NPTEL",
-    desc: "Learned cloud fundamentals, deployment models, and services.",
-    icon: <HiCloud />,
+    description: "Learned cloud fundamentals, deployment models, and services.",
+    icon: FaCloud,
+    color: "text-sky-400",
+    bgColor: "bg-sky-500/10",
   },
 ];
 
 const Certifications = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px 0px" });
 
   return (
-    <section id="certifications" className="section-padding pb-24" ref={ref}>
-      {/* ⬆️ Added pb-24 to avoid touching Contact section */}
+    <section id="certifications" className="section-padding relative" ref={ref}>
+      <div className="blob-decoration w-64 h-64 bg-primary/15 bottom-20 -left-10" />
 
-      <div className="max-w-5xl mx-auto">
-        {/* ⬆️ Increased width */}
-
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-4xl md:text-5xl font-bold gradient-text text-center mb-14"
+          transition={{ duration: 0.5 }}
         >
-          Certifications
-        </motion.h2>
+          <h2 className="section-heading">
+            <span className="gradient-text">Certifications</span>
+          </h2>
+          <p className="section-subheading">
+            Continuous learning and professional development
+          </p>
+        </motion.div>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {certs.map((cert, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {certifications.map((cert, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              key={cert.title}
+              initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card p-7 rounded-2xl border border-border 
-                         hover:shadow-xl hover:-translate-y-2 
-                         transition-all duration-300"
+              transition={{ delay: 0.2 + i * 0.1, duration: 0.4 }}
+              className="glass-card p-6 group cursor-default"
             >
-              <div className="flex items-start gap-5">
-
+              <div className="flex items-start gap-4">
                 {/* Icon */}
-                <div className="p-3 rounded-lg bg-primary/10 text-primary text-2xl">
-                  {cert.icon}
+                <div className={`w-12 h-12 rounded-xl ${cert.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                  <cert.icon className={`text-xl ${cert.color}`} />
                 </div>
 
                 {/* Content */}
-                <div>
-                  <h3 className="text-base md:text-lg font-semibold text-foreground mb-2">
-                    {cert.title}
-                  </h3>
-
-                  <p className="text-sm text-muted-foreground mb-2">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="font-semibold text-foreground text-sm">
+                      {cert.title}
+                    </h4>
+                    <HiBadgeCheck className="text-primary text-base flex-shrink-0" />
+                  </div>
+                  <p className="text-xs text-primary font-medium mb-2">
                     {cert.issuer}
                   </p>
-
-                  <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                    {cert.desc}
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {cert.description}
                   </p>
                 </div>
+              </div>
 
+              {/* Bottom accent */}
+              <div className="mt-4 pt-3 border-t border-border/50">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <HiAcademicCap className="text-primary" />
+                  <span>Verified Credential</span>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

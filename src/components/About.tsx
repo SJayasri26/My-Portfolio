@@ -1,210 +1,133 @@
-// import { motion, useInView } from "framer-motion";
-// import { useRef } from "react";
-// import { HiAcademicCap, HiBriefcase, HiChartBar } from "react-icons/hi";
-
-// const About = () => {
-//   const ref = useRef(null);
-//   const inView = useInView(ref, { once: true, margin: "-100px 0px" });
-
-//   return (
-//     <section id="about" className="section-padding" ref={ref}>
-//       <div className="max-w-5xl mx-auto">
-
-//         {/* Heading */}
-//         <motion.h2
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={inView ? { opacity: 1, y: 0 } : {}}
-//           className="text-3xl md:text-4xl font-bold gradient-text text-center mb-10"
-//         >
-//           About Me
-//         </motion.h2>
-
-//         {/* Content Card */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={inView ? { opacity: 1, y: 0 } : {}}
-//           transition={{ delay: 0.2 }}
-//           className="glass-card p-8 md:p-10"
-//         >
-
-//           {/* Photo + Summary Row */}
-//           <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
-
-//             {/* Profile Photo */}
-//             <div className="flex-shrink-0">
-//               <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-lg">
-                
-//                 {/* Replace with your image path or URL */}
-//                 <img
-//                   src="/jayasri.jpg"
-//                   alt="Profile"
-//                   className="w-full h-full object-cover"
-//                 />
-
-//               </div>
-//             </div>
-
-//             {/* Summary */}
-//             <p className="text-muted-foreground leading-relaxed text-center md:text-left">
-//               Data Analyst with a strong focus on transforming data into meaningful insights.
-//               Skilled in <span className="text-foreground font-medium">Power BI, SQL, and Python</span>,
-//               with hands-on experience in analyzing business data, improving reporting efficiency,
-//               and supporting data-driven decision-making. Passionate about solving real-world problems
-//               and continuously learning new technologies.
-//             </p>
-
-//           </div>
-
-//           {/* Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-//             {/* Education */}
-//             <div className="glass p-5 rounded-lg text-center hover:scale-105 transition-transform">
-//               <HiAcademicCap className="text-3xl text-primary mx-auto mb-3" />
-//               <h4 className="font-semibold text-foreground">B.Tech – IT</h4>
-//               <p className="text-sm text-muted-foreground">CGPA: 8.36 / 10</p>
-//               <p className="text-xs text-muted-foreground mt-1">
-//                 Sri Shanmugha College of Engineering and Technology (2021–2025)
-//               </p>
-//             </div>
-
-//             {/* Experience */}
-//             <div className="glass p-5 rounded-lg text-center hover:scale-105 transition-transform">
-//               <HiBriefcase className="text-3xl text-primary mx-auto mb-3" />
-//               <h4 className="font-semibold text-foreground">Data Analyst Trainee</h4>
-//               <p className="text-sm text-muted-foreground">
-//                 Shastika Global Impex Pvt Ltd
-//               </p>
-//               <p className="text-xs text-muted-foreground mt-1">
-//                 Current Role
-//               </p>
-//             </div>
-
-//             {/* Skills */}
-//             <div className="glass p-5 rounded-lg text-center hover:scale-105 transition-transform">
-//               <HiChartBar className="text-3xl text-primary mx-auto mb-3" />
-//               <h4 className="font-semibold text-foreground">Core Skills</h4>
-//               <p className="text-sm text-muted-foreground">
-//                 Power BI • SQL • Python
-//               </p>
-//               <p className="text-xs text-muted-foreground mt-1">
-//                 Data Analytics
-//               </p>
-//             </div>
-
-//           </div>
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { HiAcademicCap, HiBriefcase, HiChartBar } from "react-icons/hi";
+import { HiAcademicCap, HiBriefcase, HiChartBar, HiLightBulb } from "react-icons/hi";
+import { FaDatabase, FaChartLine } from "react-icons/fa";
+
+const highlights = [
+  {
+    icon: FaDatabase,
+    title: "Data Analytics",
+    description: "Power BI, Tableau, SQL, Python & Excel",
+    color: "text-primary",
+  },
+  {
+    icon: HiAcademicCap,
+    title: "B.Tech – IT",
+    description: "CGPA: 8.36 / 10 · Sri Shanmugha College (2021–2025)",
+    color: "text-secondary",
+  },
+  {
+    icon: FaChartLine,
+    title: "Data Insights",
+    description: "KPI Monitoring, Dashboard Reports & Data Preprocessing",
+    color: "text-primary",
+  },
+  {
+    icon: HiBriefcase,
+    title: "Data Analyst",
+    description: "Currently working at Shastika Global Impex Pvt Ltd",
+    color: "text-secondary",
+  },
+];
 
 const About = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px 0px" });
 
   return (
-    <section id="about" className="py-12 px-4 sm:px-6 lg:px-8" ref={ref}>
-      <div className="max-w-5xl mx-auto">
+    <section id="about" className="section-padding gradient-section relative" ref={ref}>
+      {/* Decorative blob */}
+      <div className="blob-decoration w-64 h-64 bg-primary/20 -top-20 right-10" />
 
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text text-center mb-8"
-        >
-          About Me
-        </motion.h2>
-
-        {/* Content Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-          className="glass-card p-5 sm:p-6 md:p-10"
+          transition={{ duration: 0.5 }}
         >
+          <h2 className="section-heading">
+            About <span className="gradient-text">Me</span>
+          </h2>
+          <p className="section-subheading">
+            Data Analyst with a passion for transforming data into meaningful insights
+          </p>
+        </motion.div>
 
-          {/* Photo + Summary */}
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-8">
-
-            {/* Profile Image */}
-            <div className="flex-shrink-0">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-lg">
+        {/* Content */}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
+          {/* Left: Photo + Quick Stats */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="flex-shrink-0"
+          >
+            <div className="relative">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden ring-4 ring-primary/20 shadow-2xl shadow-primary/10">
                 <img
-                  src="/jayasri.jpg"
-                  alt="Profile"
+                  src="/WhatsApp Image 2026-06-22 at 5.35.01 PM.jpeg"
+                  alt="Jayasri S"
                   className="w-full h-full object-cover"
                 />
               </div>
+
             </div>
+          </motion.div>
 
-            {/* Summary */}
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center md:text-left">
-              Data Analyst with a strong focus on transforming data into meaningful insights.
-              Skilled in{" "}
-              <span className="text-foreground font-medium">
-                Power BI, SQL, and Python
-              </span>
-              , with hands-on experience in analyzing business data, improving reporting efficiency,
-              and supporting data-driven decision-making. Passionate about solving real-world problems
-              and continuously learning new technologies.
-            </p>
+          {/* Right: Description + Cards */}
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+                Data Analyst with hands-on full-stack development and business operations experience. Skilled in{" "}
+                <span className="text-foreground font-medium">
+                  Power BI, SQL, Python, and Excel
+                </span>
+                {" "}for turning raw business data into actionable insights, while also building and maintaining ERP systems and supporting end-to-end export operations, vendor coordination, and marketing.
+              </p>
 
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+                Passionate about combining data analysis with technology to solve real-world business problems. Currently working as a{" "}
+                <span className="text-primary font-medium">
+                  Data Analyst
+                </span>{" "}
+                at Shastika Global Impex Pvt Ltd.
+              </p>
+
+              <div className="flex items-center gap-2 mb-8">
+                <HiLightBulb className="text-primary text-lg" />
+                <p className="text-sm text-muted-foreground italic">
+                  "Turning complex data into actionable insights"
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Highlight Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {highlights.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
+                  className="glass-card p-5 group cursor-default"
+                >
+                  <item.icon className={`text-2xl ${item.color} mb-3 group-hover:scale-110 transition-transform`} />
+                  <h4 className="font-semibold text-foreground text-sm mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-
-            {/* Education */}
-            <div className="glass p-4 sm:p-5 rounded-lg text-center hover:scale-105 transition-transform">
-              <HiAcademicCap className="text-2xl sm:text-3xl text-primary mx-auto mb-2 sm:mb-3" />
-              <h4 className="font-semibold text-foreground text-sm sm:text-base">
-                B.Tech – IT
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                CGPA: 8.36 / 10
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Sri Shanmugha College of Engineering and Technology (2021–2025)
-              </p>
-            </div>
-
-            {/* Experience */}
-            <div className="glass p-4 sm:p-5 rounded-lg text-center hover:scale-105 transition-transform">
-              <HiBriefcase className="text-2xl sm:text-3xl text-primary mx-auto mb-2 sm:mb-3" />
-              <h4 className="font-semibold text-foreground text-sm sm:text-base">
-                Data Analyst Trainee
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Shastika Global Impex Pvt Ltd
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Current Role
-              </p>
-            </div>
-
-            {/* Skills */}
-            <div className="glass p-4 sm:p-5 rounded-lg text-center hover:scale-105 transition-transform">
-              <HiChartBar className="text-2xl sm:text-3xl text-primary mx-auto mb-2 sm:mb-3" />
-              <h4 className="font-semibold text-foreground text-sm sm:text-base">
-                Core Skills
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Power BI • SQL • Python
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Data Analytics
-              </p>
-            </div>
-
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

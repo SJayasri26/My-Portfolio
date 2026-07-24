@@ -1,197 +1,186 @@
-// import { motion } from "framer-motion";
-// import { HiDownload, HiLocationMarker, HiArrowDown } from "react-icons/hi";
-
-// const Hero = () => {
-//   return (
-//     <section className="min-h-screen flex items-center justify-center px-6 pt-28 pb-16 overflow-visible">
-//       <div className="max-w-5xl w-full mx-auto flex flex-col items-start text-left">
-
-//         {/* Greeting */}
-//         <motion.p
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.5 }}
-//           className="text-muted-foreground text-base mb-2"
-//         >
-//           Hello, I'm
-//         </motion.p>
-
-//         {/* Name (FIXED COMPLETELY) */}
-//         <motion.h1
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6, delay: 0.1 }}
-//           className="text-5xl md:text-7xl font-bold gradient-text mb-3 leading-[1.2] pb-2 overflow-visible"
-//         >
-//           Jayasri Seenu
-//         </motion.h1>
-
-//         {/* Role */}
-//         <motion.h2
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.5, delay: 0.25 }}
-//           className="text-xl md:text-2xl font-semibold text-foreground mb-4"
-//         >
-//           Data Analyst
-//         </motion.h2>
-
-//         {/* Divider */}
-//         <motion.div
-//           initial={{ scaleX: 0 }}
-//           animate={{ scaleX: 1 }}
-//           transition={{ delay: 0.3 }}
-//           className="w-12 h-[2px] bg-primary mb-5 origin-left"
-//         />
-
-//         {/* Location */}
-//         <motion.p
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           transition={{ delay: 0.4 }}
-//           className="flex items-center gap-2 text-muted-foreground mb-6"
-//         >
-//           <HiLocationMarker className="text-primary" />
-//           Salem, Tamil Nadu, India
-//         </motion.p>
-
-//         {/* Summary */}
-//         <motion.p
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ delay: 0.5 }}
-//           className="text-muted-foreground max-w-xl leading-relaxed mb-10"
-//         >
-//           Passionate about transforming raw data into actionable insights and helping
-//           businesses make smarter, data-driven decisions.
-//         </motion.p>
-
-//         {/* CTA Buttons */}
-//         <motion.div
-//           initial={{ opacity: 0, scale: 0.95 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ delay: 0.6 }}
-//           className="flex flex-wrap gap-4"
-//         >
-//           <a
-//             href="/Jayasri_Seenu_Resume.pdf"
-//             download
-//             className="btn-gradient inline-flex items-center gap-2 px-6 py-3 text-base"
-//           >
-//             <HiDownload className="text-lg" />
-//             Download Resume
-//           </a>
-
-//           <a
-//             href="#contact"
-//             className="inline-flex items-center gap-2 px-6 py-3 text-base rounded-lg font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors"
-//           >
-//             <HiArrowDown className="text-lg" />
-//             Contact Me
-//           </a>
-//         </motion.div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
 import { motion } from "framer-motion";
-import { HiDownload, HiLocationMarker, HiArrowDown } from "react-icons/hi";
+import { HiDownload, HiArrowDown, HiLocationMarker } from "react-icons/hi";
+import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-      <div className="max-w-5xl w-full mx-auto flex flex-col items-center md:items-start text-center md:text-left">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16 gradient-hero overflow-hidden">
+      {/* Decorative Blobs */}
+      <div className="blob-decoration w-72 h-72 bg-primary/30 top-20 -left-20" />
+      <div className="blob-decoration w-96 h-96 bg-secondary/20 bottom-10 -right-24" style={{ animationDelay: "3s" }} />
+      <div className="blob-decoration w-48 h-48 bg-primary/20 top-1/2 left-1/3" style={{ animationDelay: "5s" }} />
 
-        {/* Greeting */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-sm sm:text-base text-muted-foreground mb-2"
-        >
-          Hello, I'm
-        </motion.p>
+      <div className="max-w-6xl w-full mx-auto relative z-10">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
 
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold gradient-text mb-3 leading-tight"
-        >
-          Jayasri Seenu
-        </motion.h1>
+          {/* Left Content */}
+          <div className="flex-1 text-center lg:text-left">
+            {/* Greeting badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              Available for Opportunities
+            </motion.div>
 
-        {/* Role */}
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-4"
-        >
-          Data Analyst
-        </motion.h2>
+            {/* Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-[1.1]"
+            >
+              <span className="text-foreground">Hi, I'm </span>
+              <span className="gradient-text">Jayasri S</span>
+            </motion.h1>
 
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.3 }}
-          className="w-10 sm:w-12 h-[2px] bg-primary mb-4 origin-center md:origin-left"
-        />
+            {/* Title */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground/80 mb-3"
+            >
+              Data Analyst
+            </motion.h2>
 
-        {/* Location */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="flex items-center justify-center md:justify-start gap-2 text-sm sm:text-base text-muted-foreground mb-5"
-        >
-          <HiLocationMarker className="text-primary" />
-          Salem, Tamil Nadu, India
-        </motion.p>
+            {/* Divider */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.35, duration: 0.4 }}
+              className="w-16 h-1 bg-primary rounded-full mb-5 mx-auto lg:mx-0 origin-left"
+            />
 
-        {/* Summary */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-sm sm:text-base text-muted-foreground max-w-md md:max-w-xl leading-relaxed mb-8"
-        >
-          Passionate about transforming raw data into actionable insights and helping
-          businesses make smarter, data-driven decisions.
-        </motion.p>
+            {/* Location */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground mb-4"
+            >
+              <HiLocationMarker className="text-primary" />
+              Erode, Tamil Nadu, India
+            </motion.p>
 
-        {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
-        >
-          <a
-            href="/Jayasri_Seenu_Resume.pdf"
-            download
-            className="btn-gradient flex items-center justify-center gap-2 px-5 py-3 text-sm sm:text-base w-full sm:w-auto"
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8"
+            >
+              Transforming complex data into meaningful insights. Skilled in Power BI, SQL, and Python,
+              with hands-on experience in business data analysis and report optimization.
+            </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+            >
+              <a
+                href="/Jayasri_Seenu_Resume.pdf"
+                download
+                className="btn-primary flex items-center justify-center gap-2"
+              >
+                <HiDownload className="text-lg" />
+                Download Resume
+              </a>
+
+              <a
+                href="#contact"
+                className="btn-outline flex items-center justify-center gap-2"
+              >
+                <HiArrowDown className="text-lg" />
+                Contact Me
+              </a>
+            </motion.div>
+
+            {/* Social links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="https://linkedin.com/in/jayasri-s-18b972298/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl glass text-muted-foreground hover:text-primary hover:border-primary/30 transition-all hover:-translate-y-1"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
+              <a
+                href="https://github.com/SJayasri26"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl glass text-muted-foreground hover:text-primary hover:border-primary/30 transition-all hover:-translate-y-1"
+                aria-label="GitHub"
+              >
+                <FaGithub size={18} />
+              </a>
+              <a
+                href="mailto:sjayasri39@gmail.com"
+                className="p-3 rounded-xl glass text-muted-foreground hover:text-primary hover:border-primary/30 transition-all hover:-translate-y-1"
+                aria-label="Email"
+              >
+                <FaEnvelope size={18} />
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right - Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex-shrink-0"
           >
-            <HiDownload className="text-lg" />
-            Download Resume
-          </a>
+            <div className="relative">
+              {/* Outer glow ring */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 via-transparent to-secondary/30 blur-xl animate-pulse" />
 
-          <a
-            href="#contact"
-            className="flex items-center justify-center gap-2 px-5 py-3 text-sm sm:text-base rounded-lg font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors w-full sm:w-auto"
-          >
-            <HiArrowDown className="text-lg" />
-            Contact Me
-          </a>
-        </motion.div>
+              {/* Image container */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-primary/40 shadow-2xl shadow-primary/20">
+                <img
+                  src="/WhatsApp Image 2026-06-22 at 5.35.01 PM.jpeg"
+                  alt="Jayasri S - Data Analyst"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
+
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center pt-2">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1.5 h-1.5 rounded-full bg-current"
+            />
+          </div>
+        </a>
+      </motion.div>
     </section>
   );
 };
