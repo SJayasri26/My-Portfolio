@@ -12,6 +12,15 @@ export default {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'xs': '320px',    // Small phones
+      'sm': '640px',    // Large phones/Tablets
+      'md': '768px',    // Tablets/Small Laptops
+      'lg': '1024px',   // Desktops/Laptops
+      'xl': '1280px',   // Large Desktops
+      '2xl': '1536px',  // Extra Large Screens
+      '3xl': '1920px',  // Ultra Wide Screens
+    },
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],

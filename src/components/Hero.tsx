@@ -85,7 +85,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
             >
               <a
-                href="/Jayasri_Seenu_Resume.pdf"
+                href="/Jayasri_Seenu.pdf"
                 download
                 className="btn-primary flex items-center justify-center gap-2"
               >
@@ -151,7 +151,7 @@ const Hero = () => {
               {/* Image container */}
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-primary/40 shadow-2xl shadow-primary/20">
                 <img
-                  src="/WhatsApp Image 2026-06-22 at 5.35.01 PM.jpeg"
+                  src="/Jayasri.jpeg"
                   alt="Jayasri S - Data Analyst"
                   className="w-full h-full object-cover"
                 />

@@ -125,7 +125,7 @@ const Navbar = () => {
 
           {/* Resume button (desktop) */}
           <a
-            href="/Jayasri_Seenu_Resume.pdf"
+            href="/Jayasri_Seenu.pdf"
             download
             className="hidden lg:flex btn-primary items-center gap-2 !py-2.5 !px-5"
           >
@@ -174,7 +174,7 @@ const Navbar = () => {
               ))}
 
               <a
-                href="/Jayasri_Seenu_Resume.pdf"
+                href="/Jayasri_Seenu.pdf"
                 download
                 className="btn-primary flex items-center justify-center gap-2 mt-3 w-full"
               >
