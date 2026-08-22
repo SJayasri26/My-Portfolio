@@ -66,7 +66,7 @@ const About = () => {
             <div className="relative">
               <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden ring-4 ring-primary/20 shadow-2xl shadow-primary/10">
                 <img
-                  src="/JAYASRI.jpeg"
+                  src="/Jayasri.jpeg"
                   alt="Jayasri S"
                   className="w-full h-full object-cover"
                 />
